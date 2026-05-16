@@ -1,4 +1,4 @@
-# flutter_application_1
+# flutter_ai_agent_app
 
 A new Flutter project.
 
