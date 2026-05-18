@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ai_agent_app/helper/pref.dart';
 import 'package:flutter_ai_agent_app/model/onboard.dart';
 import 'package:flutter_ai_agent_app/screen/home_screen.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:lottie/lottie.dart';
 
 import '../helper/global.dart';
@@ -100,9 +103,11 @@ class OnboardingScreen extends StatelessWidget {
                 ),
                 onPressed: () {
                   if (isLast) {
-                    Navigator.of(context).pushReplacement(
+                    Pref.showOnboarding = false;
+                    /*Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (_) => HomeScreen()),
-                    );
+                    );*/
+                    Get.off(() => const HomeScreen());
                   } else {
                     c.nextPage(
                       duration: Duration(milliseconds: 600),

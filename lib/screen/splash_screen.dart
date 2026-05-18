@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_ai_agent_app/helper/global.dart';
+import 'package:flutter_ai_agent_app/helper/pref.dart';
 import 'package:flutter_ai_agent_app/screen/home_screen.dart';
 import 'package:flutter_ai_agent_app/screen/onboarding_screen.dart';
 import 'package:flutter_ai_agent_app/widget/custom_loading.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,8 +20,17 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     // wait for 2 seconds and then navigate to home screen
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const OnboardingScreen()),
+      /*Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (_) => Pref.showOnboarding
+              ? const OnboardingScreen()
+              : const HomeScreen(),
+        ),
+      );
+      */
+      Get.off(
+        () =>
+            Pref.showOnboarding ? const OnboardingScreen() : const HomeScreen(),
       );
     });
   }

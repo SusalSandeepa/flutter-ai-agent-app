@@ -18,6 +18,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #for hive database
+  hive: ^4.0.0-dev.2
+  isar_flutter_libs: ^4.0.0-dev.13
+
+  #for accessing the storagepath of the device
+  path_provider: ^2.1.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -25,6 +31,9 @@ dependencies:
 
   #Lottie animations
   lottie: ^3.3.3
+
+  #for state management and route management
+  get: ^4.7.3
 
 dev_dependencies:
   flutter_test:
