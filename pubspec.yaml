@@ -35,6 +35,10 @@ dependencies:
   #for state management and route management
   get: ^4.7.3
 
+  #for animations
+  flutter_animate: ^4.5.2
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
